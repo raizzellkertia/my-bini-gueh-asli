@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bini Gueeh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card">
+        <h1>Halo, Kecayangan nya akuuh!</h1>
+        <p>Terima Kasih Kamuuh Sudah Menjadi Bidadari Nya Akuuh.</p>
+        <!-- Tombol untuk membuka modal -->
+        <button class="btn" id="btnBuka">Pencet Ini Donk Ayang </button>
+    </div>
+
+    <!-- Pop-up / Modal Kustom -->
+    <div class="modal-overlay" id="modalPopup">
+        <div class="modal-box">
+            <h2>Semangat Yaww Kerja Nyaww!</h2>
+            <p>Halo Kecayangannya Akuuh , Kamuu Cantik Banget Aslii Hari Ini.</p>       <button class="btn-tutup" id="btnTutup">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Menghubungkan ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+// Mengambil elemen tombol dan modal dari HTML
+const btnBuka = document.getElementById('btnBuka');
+const btnTutup = document.getElementById('btnTutup');
+const modalPopup = document.getElementById('modalPopup');
+
+// Fungsi membuka pop-up saat tombol utama diklik
+btnBuka.addEventListener('click', () => {
+    modalPopup.style.display = 'flex';
+});
+
+// Fungsi menutup pop-up saat tombol tutup diklik
+btnTutup.addEventListener('click', () => {
+    modalPopup.style.display = 'none';
+});
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 { color: #2c3e50; }
+p { color: #7f8c8d; }
+
+.btn {
+    background-color: #f10095;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn:hover { background-color: #960052; }
+
+/* Desain Pop-up (Modal) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background redup */
+    display: none; /* Sembunyi secara bawaan */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-box {
+    background-color: rgb(255, 255, 255);
+    padding: 25px 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 320px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-tutup {
+    background-color: #f702c2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.btn-tutup:hover { background-color: #ff07de; }
